@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Q&A</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.sticky.js"></script> -->
+    <style>
+      *{
+        font-family: 'Noto Sans TC', sans-serif;
+      
+      }
+      .fixed{
+        position: fixed;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        transition: .5s;
+        background: rgb(228, 228, 228);
+        z-index: 998;
+      }
+      .fixed.active{
+            top:-60px;
+        }
+        .header-nav{
+        z-index: 999;
+        padding: 5px 20px;
+        background: oldlace;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        position: sticky;
+        /* position: fixed; */
+      }
+      .fiX{
+        position: absolute;
+        top:136px;
+        left: 50%;
+        transform:translateX(-50%);
+        width: 100%;
+      }
+      .header-nav.fix_top{
+        position: fixed;
+        width: 100%;
+        top:0;
+        left:0;
+      }
+  
+  
+      
+      li{
+        list-style: none;
+      }
+      .wrapper{
+        max-width:1200px;
+        margin: 0px auto;
+
+      }
+      .navqa{
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+      }
+      .navqa li{
+        padding: 10px 20px;
+        background: rgb(241, 211, 183);
+        border-radius: 50px;
+        margin: 20px;
+        
+      }
+      .navqa li a{
+        color:rgb(102, 63, 13);
+        padding: 0 20px;
+      }
+      .navqa li:hover{
+        background: rgb(102, 63, 13);
+
+      }
+      .navqa li:hover a{
+        color:rgb(241, 211, 183);
+        padding: 0 20px;
+        text-decoration: none;
+      }
+      .qAndA{
+          padding: 10px 0;
+          margin: 10px auto;
+      }
+      .qAndA h5{
+          text-align: center;
+          border-bottom: 2px solid #ccc;
+          padding: 10px 0 ;
+          margin-top: 50px;
+      }
+      .btnSize{
+          background: rgb(170, 170, 170);
+          color: cornsilk;
+          width: 100%;
+          padding: 20px 0;
+          font-size: 18px;
+      }
+      .btnSize:hover{
+        background: rgb(197, 24, 58);
+        color:#fff
+      }
+      .ulStyle li{
+        list-style-type: disc;
+        padding: 20px;
+      }
+      .menu{
+        padding: 0;
+      }
+      .menu li a{
+        color: rgb(66, 66, 66);
+        text-decoration: none;
+      }
+      .menu li a:hover{
+        color: rgb(136, 66, 19);
+      }
+   
+      .textCenter{
+        text-align: center;
+      }
+      .headerName h2{
+        background: darkgrey;
+        color: #fff;
+        padding: 20px 0;
+        margin: 0 auto;
+        text-align: center;
+        border-bottom:3px solid #ccc ;
+      }
+    
+ 
+      footer{
+        background: rgb(255, 225, 160);
+        padding: 30px;
+        text-align: center;
+        color: rgb(65, 65, 65) ;
+      }
+      footer p{
+        padding: 10px 0;
+        border-top:1px solid  rgb(94, 94, 94);
+        margin: 20px 0 0 0;
+      }
+      footer li{
+        margin:0 20px;
+      }
+      footer li a{
+        color: rgb(94, 94, 94);
+      }
+      footer li a:hover{
+        text-decoration: none;
+        color: rgb(141, 68, 25);    
+      }
+  
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <ul class="d-flex justify-content-around header-nav">
+          <li class="flex-grow-1">
+            <a href=""><img src="images/1-01.png" alt=""></a>
+          </li>
+          <li>
+            <a href="about.html".html"><img src="images/1-06.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-03.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-02.png" alt=""></a>          
+          </li>
+        </ul>
+      </nav>
+      <nav class="fixed">
+          <ul class="d-flex justify-content-around wrapper menu">
+            <li class="py-3">
+              <a href="about.html">品牌故事</a>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來洗</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">草本養護系列</a>
+                  <a class="dropdown-item" href="#">口腔對策系列</a>
+                  <a class="dropdown-item" href="#">植淨日常系列</a>
+              </div>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來吃</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="home.html">毛孩每日健康賞</a>
+                <a class="dropdown-item" href="#">毛點心製所</a>
+                <a class="dropdown-item" href="#">阿姆阿姆潔牙棒</a>
+            </div>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">所有商品</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">汪汪商品</a>
+                  <a class="dropdown-item" href="#">喵喵商品</a>
+                  <a class="dropdown-item" href="#">周邊嚴選</a>
+                  <a class="dropdown-item" href="#">優惠套組</a>
+              </div>
+            </li>
+            <li class="py-3"><a href="">常見Q&A</a></li>
+            <li class="py-3"><a href="">這樣洗最健康</a></li>
+            <li class="py-3"><a href="">小毛會員招募中</a></li>
+          </ul>
+        </nav>
+      <div class="fiX">
+        <header>
+          <div class="headerName">
+              <h2>
+                常見Q&A
+              </h2>
+              <div class="container">
+                    <ul class="navqa" id="nav">
+                        <li class="current"><a href="#section-1">一般常見問題</a></li>
+                        <li><a href="#section-2">購物常見問題</a></li>
+                        <li><a href="#section-3">配送取貨問題</a></li>
+                        <li><a href="#section-4">會員常見問題</a></li>
+                    </ul>
+              </div>
+              <div class="container qAndA">
+                <div id="section-1">
+                    <h5>一般常見問題</h5>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse">
+                        Q：請問你們有實體店面嗎？
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse">
+                      <div class="card card-body">
+                        目前以官網上銷售為主
+                      </div>
+                    </div>
+                </div>
+                <div id="section-2">
+                    <h5>購物常見問題</h5>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse1-1">
+                        Q：請問你們的購物流程是？大概幾天會送達呢？
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse1-1">
+                      <div class="card card-body">
+                        從付款到您收到貨品約需 3 至 6 個工作天。
+                        <img src="images/shopping-guide-pc.jpg" alt="">
+                      </div>
+                    </div>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse1-2">
+                        Q：我要怎麼查詢我的訂單呢？	
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse1-2">
+                      <div class="card card-body">
+                        登入會員後，點選［我的帳戶］中的［訂單］頁籤，即可查詢自己的訂單哦！
+                      </div>
+                    </div>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse1-3">
+                        Q：如何使用「超商代碼繳費」付款呢？		
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse1-3">
+                      <div class="card card-body">
+                        選擇「超商代碼繳費」付款的訂單，將於訂單成立後取得一組虛擬代碼，需前往台灣四大連鎖超商之一（7-11、全家、萊爾富、OK），操作便利超商的多媒體服務機，輸入指定代碼，持繳費單據到櫃台繳費，即可完成付款。
+                      </div>
+                    </div>
+                </div>    
+                <div id="section-3">
+                    <h5>配送取貨問題</h5>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse1-4">
+                        Q：有什麼取貨方式呢？
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse1-4">
+                      <div class="card card-body">
+                        台灣本島目前提供「宅配」方式寄送商品，另提供「7-11超商取貨」服務（需先完成付款），離島則以「郵寄」方式寄送。
+                      </div>
+                    </div>
+                </div>
+                <div id="section-4">
+                    <h5>會員常見問題</h5>
+                    <p>
+                        <a class="btn btnSize" data-toggle="collapse" href="#collapse1-5">
+                        Q：請問該怎麼加入會員呢？	
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapse1-5">
+                      <div class="card card-body">
+                        <ul class="ulStyle">
+                            <li>若您尚未於［毛起來］購物過，只要點擊「登入會員」>「註冊會員」，選擇Facebook註冊 或 填寫 您的名稱、Email、密碼，即可註冊成為［毛起來］的會員，立即享有100元的購物金！</li>
+                            <li>您也可以在購物時勾選「成為 毛起來 的會員」，系統將在收到您的訂單後，寄送「設定密碼通知信」給您；</li>
+                            <li>若您曾於［毛起來］購物過，但尚未設定密碼，可於「登入會員」頁面點選底下的「忘記密碼」，輸入email後，系統將寄送「設定密碼通知信」給您。</li>
+                            <li>點擊連結完成設定密碼，即可順利成為［毛起來］的會員，立即享有100元的購物金！</li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+                
+                
+                
+          </div>
+      </header>
+      
+      <footer>
+        <h4>
+          聯絡我們
+        </h4>
+        <h5>服務時間：週一至週五 09:30-18:00</h5>
+        <h5>客服專線：02-2655-0567</h5>
+        <h5>客服信箱：maoup@maoup.com.tw</h5>
+        <p>Copyright © 2018 莫奧數位股份有限公司</p>
+        <ul class="d-inline-flex">
+          <li><a href="">Line</a></li>|
+          <li><a href="">Facebook</a></li>|
+          <li><a href="">Instagram</a></li>|
+          <li><a href="">YouTube</a></li>
+        </ul>
+      </footer>
+    </div>
+      
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="dist/skrollr.min.js"></script>
+    <script>
+        var slideIndex=0;
+        var move=0;
+        let slideWidth=1200;
+        let sildeImg=["1200x.webp", "1200x (1).webp"]
+        let slideCount=sildeImg.length;
+        $(".slide-pic").css("width",slideCount*slideWidth)
+        for(i=0; i<sildeImg.length; i++){  
+            let slide=`<li><img src="images/${sildeImg[i]}" alt=""></li>`
+            $("#pages").append("<li></li>")
+            console.log(slide)
+            $("#slidePic").append(slide)
+        }
+        $(".pages li").eq(0).css("background","#fff")
+
+        $(".pages li").hover(function(){
+            slideIndex=$(this).index();
+            goSlide()
+        })
+        $("#goNext").click(function(){
+            ++slideIndex
+            if (slideIndex>=slideCount){
+                slideIndex=0;
+            }
+            goSlide()
+        })
+        $("#goPrev").click(function(){
+            --slideIndex
+            if (slideIndex<0){
+                slideIndex=slideCount-1;
+            }
+            goSlide()
+        })
+        function goSlide(){
+            move=0-1200*slideIndex;
+            $(".slide-pic").css("left",move)
+            $(".pages li").eq(slideIndex).css("background","#fff")
+            .siblings().css("background","transparent")
+            console.log(slideIndex)
+        }
+        
+        let lastScrollTop=0;
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop();
+
+            if(scrollTop>lastScrollTop){
+                $(".fixed").addClass("active")
+            }else{
+                $(".fixed").removeClass("active")
+            }
+            lastScrollTop=scrollTop;
+        })
+
+        let navPosition=$(".header-nav").offset().top;
+        console.log(navPosition)
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop()
+            console.log(scrollTop)
+            if(scrollTop>=navPosition){
+                $(".header-nav").addClass("fix_top");
+            }else{
+                $(".header-nav").removeClass("fix_top");
+            }
+        })
+        $(document).ready(function() {
+			$('#nav').onePageNav();
+		});
+    </script>
+  </body>
+</html>

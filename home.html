@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>寵物星球</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <link href="skrollr-master/examples/fixed-positioning.css" rel="stylesheet" type="text/css" />
+	  <link href="skrollr-master/examples/main.css" rel="stylesheet" type="text/css" /> -->
+    <style>
+      *{
+        font-family: 'Noto Sans TC', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .fixed{
+        position: fixed;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        transition: .5s;
+        background: rgb(228, 228, 228);
+        z-index: 998;
+      }
+      .fixed.active{
+        top:-60px;
+        }
+      .header-nav{
+        z-index: 999;
+        padding: 5px 20px;
+        background: oldlace;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        position: sticky;
+        /* position: fixed; */
+      }
+      .fiX{
+        position: absolute;
+        top:136px;
+        left: 50%;
+        transform:translateX(-50%);
+        width: 100%;
+      }
+      .header-nav.fix_top{
+        position: fixed;
+        width: 100%;
+        top:0;
+        left:0;
+      }
+      
+      li{
+        list-style: none;
+      }
+      .wrapper{
+        max-width:1200px;
+        margin: 0px auto;
+
+      }
+      .slider{
+        height: 678px;
+        background: #000;
+        overflow: hidden;
+        position: relative;
+      }
+      .slide-pic{
+        position: absolute;
+        left: 0px;
+        /* width: 3200px; */
+        transition: .5s;
+      }
+      .slide-pic li{
+        height: 678px;
+        flex: 1 0 0;
+      }
+      .slide-pic li img{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+      }
+      .pages{
+        position: absolute;
+        bottom: 0%;
+        justify-content: center;
+        left: 0 ;
+        width: 100%;
+      }
+      .pages li{
+        width: 24px;
+        height: 8px;
+        border:1px solid #fff;
+        margin: 0 5px;
+      }
+      .pages li:hover{
+        background: #fff;
+        }
+      .btn{
+        position: absolute;
+        color: rgba(225,225,225,.7) !important;
+        background:transparent;
+        background: rgba(0,0,0,0);
+        display:flex;
+        justify-content: center;
+        top: 0;
+        bottom: 0 ;
+        cursor: pointer;
+        align-items: center;
+        width: 40px;
+        transition: .5;
+      }
+      .btn:hover{
+        background: rgba(0,0,0,0.6);
+        color:#fff !important;
+      }
+      .btn_right{
+        right: 0;
+      }
+      .btn_left{
+        left: 0;
+      }
+      .popular img{
+        width: 100%;
+      }
+      .menu{
+        padding: 0;
+      }
+      .menu li a{
+        color: rgb(66, 66, 66);
+        text-decoration: none;
+      }
+      .menu li a:hover{
+        color: rgb(136, 66, 19);
+      }
+      .picsize img{
+        width: 250px;
+        height: 250px;
+      }
+      .textCenter{
+        text-align: center;
+      }
+      
+      @media (max-width:992px){
+        
+        .align-items{
+          align-items: center;
+        }
+      }
+      .daily img{
+        width: 200px;
+      }
+      .daily h4{
+        border:2px solid #ccc;
+        border-radius: 20px;
+        padding: 15px 10px;
+      }
+      .daily h5{
+        padding: 10px 0;
+      }
+      .col-lg-3{
+        align-items:flex-start;
+      }
+      .main img{
+        width: 400px;
+      }
+      .main .row{
+        align-items: center;
+        margin: 30px 0;
+      }
+      footer{
+        background: rgb(255, 225, 160);
+        padding: 30px;
+        text-align: center;
+        color: rgb(65, 65, 65) ;
+      }
+      footer p{
+        padding: 10px 0;
+        border-top:1px solid  rgb(94, 94, 94);
+        margin: 20px 0 0 0;
+      }
+      footer li{
+        margin:0 20px;
+      }
+      footer li a{
+        color: rgb(94, 94, 94);
+      }
+      footer li a:hover{
+        text-decoration: none;
+        color: rgb(141, 68, 25);
+      }
+      .easing_wrapper {
+	width:100%;
+  height:100%;
+  
+    }
+    .easing {
+	top:10%;
+	width:50%;
+	z-index:101;
+}
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <ul class="d-flex justify-content-around header-nav">
+          <li class="flex-grow-1">
+            <a href=""><img src="images/1-01.png" alt=""></a>
+          </li>
+          <li>
+            <a href="about.html"><img src="images/1-06.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-03.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-02.png" alt=""></a>          
+          </li>
+        </ul>
+      </nav><!--  -->
+      <nav class="fixed">
+        <ul class="d-flex justify-content-around wrapper menu">
+          <li class="py-3">
+            <a href="about.html">品牌故事</a>
+          </li>
+          <li class="py-3">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來洗</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">草本養護系列</a>
+                <a class="dropdown-item" href="#">口腔對策系列</a>
+                <a class="dropdown-item" href="#">植淨日常系列</a>
+            </div>
+          </li>
+          <li class="py-3">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來吃</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">毛孩每日健康賞</a>
+              <a class="dropdown-item" href="#">毛點心製所</a>
+              <a class="dropdown-item" href="#">阿姆阿姆潔牙棒</a>
+          </div>
+          </li>
+          <li class="py-3">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">所有商品</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">汪汪商品</a>
+                <a class="dropdown-item" href="#">喵喵商品</a>
+                <a class="dropdown-item" href="#">周邊嚴選</a>
+                <a class="dropdown-item" href="#">優惠套組</a>
+            </div>
+          </li>
+          <li class="py-3"><a href="QA.html">常見Q&A</a></li>
+          <li class="py-3"><a href="">這樣洗最健康</a></li>
+          <li class="py-3"><a href="">小毛會員招募中</a></li>
+        </ul>
+      </nav>
+      <div class="fiX">
+        <header>
+        <div class="wrapper">
+          <div class="slider">
+              <ul class="list-unstyled slide-pic d-flex" id="slidePic">
+              </ul>
+              <ul class="list-unstyled pages d-flex" id="pages">
+            </ul>
+            <a class="btn btn_right" id="goNext">
+                <i class="fas fa-caret-right"></i>
+            </a>
+            <a class="btn btn_left" id="goPrev">
+                <i class="fas fa-caret-left"></i>
+            </a>
+          </div>
+        </div>
+        <div class="wrapper popular">
+          <img src="images/1200x (2).webp" alt="">
+        </div>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/1200x.png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(50, 161, 206);">挑食毛孩的<br>營養救星</h3>
+              <p class="p-3">［汪汪專用］鮮食、罐頭、飼料族必備，方便的粉狀配方，拌進飯裡可快速補充均衡營養。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/1200x (1).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(223, 94, 101);">挑食毛孩的<br>營養救星</h3>
+              <p class="p-3">［貓貓專用］鮮食、罐頭、飼料族必備，方便的粉狀配方，拌進飯裡可快速補充均衡營養。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x.png" alt="">
+            </div>
+            <div class="textCenter">
+                <h3 class="mt-4" style="color: rgb(53, 165, 49);">毛孩的專屬<br>視力保健</h3>
+                <p class="p-3">葉黃素+花青素的天然護眼配方，協助毛孩保護視力健康。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x (1).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(57, 136, 209);">走路不卡卡的<br>獨家配方</h3>
+              <p class="p-3">添加支持關節健康的四大成份，給毛孩健步如飛的行動力。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x (2).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(228, 87, 74);">補充好心情的<br>關鍵營養</h3>
+              <p class="p-3">由植物、酵母菌等濃縮萃取的天然胺基酸，幫助毛孩面對壓力，天天好心情。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x (3).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(218, 80, 149);">完整防護<br>泌尿道健康</h3>
+              <p class="p-3">採用天然萃取蔓越莓，維持泌尿下水道健康，尿尿自然好輕鬆！</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x (4).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4" style="color: rgb(230, 166, 29);">呼吸道與心臟<br>日常保健</h3>
+              <p class="p-3">源自天然的離胺酸+牛胺酸配方，輕鬆打造貓貓健康好體質。</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-md-height d-flex my-5 align-items">
+            <div class="picsize">
+              <img src="images/400x (5).png" alt="">
+            </div>
+            <div class="textCenter">
+              <h3 class="mt-4">每日健康賞</h3>
+              <p class="p-3">每日健康賞的代表就是達摩不倒翁!每一顆都幫毛孩祈求著「吉祥」、「長壽」、「平安」、「健康」。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row daily align-items-center textCenter">
+          <div class="col-xl-3 col-lg-3">
+            <img src="images/400x (1).webp" alt="">
+          </div>
+          <div class="col-xl-3 col-lg-3">
+            <h4>
+              ➊從寵物需求出發
+            </h4>
+            <h5>
+              易於餵食．易於延續
+            </h5>
+          </div>
+          <div class="col-xl-3 col-lg-3">
+            <h4>
+              ➋安心品質
+            </h4>
+            <h5>
+              安全檢驗．透明的劑量
+            </h5>
+          </div>
+          <div class="col-xl-3 col-lg-3">
+            <h4>
+              ➌客戶陪伴
+            </h4>
+            <h5>
+              營養師專業諮詢
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="container main">
+        <div class="row" data-1700="opacity:0;top:5%;transform-origin:0 0;" data-2200="opacity:1;top:10%;">
+            <div class="col-lg-6 col-md-12"><img src="images/600x (3).png" alt=""></div>
+            <div class="col-lg-6 col-md-12">
+              <h1>
+                01
+                <span>源自天然 ‧ 卻更精彩</span>
+              </h1>
+              <h2>
+                將豐富的天然營養萃取、濃縮在一顆小小的獎勵中
+              </h2>
+              <ul>
+                <li>高品質、天然來源成份</li>
+                <li>從寵物需求出發，專業營養師調製</li>
+                <li>1.5g的重量，乘載100倍的營養</li>
+              </ul>
+        
+          </div>
+        </div>
+        <div class="row" data-2000="opacity:0;top:5%;transform-origin:0 0;" data-2500="opacity:1;top:10%;">
+          <div class="col-lg-6 col-md-12"><img src="images/600x (1).png" alt=""></div>
+          <div class="col-lg-6 col-md-12">
+            <h1>
+              02
+              <span>易於餵食 ‧ 易於持續</span>
+            </h1>
+            <h2>
+              健康，應該是一種快樂的習慣，不該成為主人與毛孩的苦戰！
+            </h2>
+            <ul>
+              <li>好吃、好餵、毛孩最愛</li>
+              <li>不費力即可剝碎，大小毛孩都容易吃</li>
+              <li>包裝好攜帶，每日健康不漏勾</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row" data-2300="opacity:0;top:5%;transform-origin:0 0;" data-2800="opacity:1;top:10%;">
+          <div class="col-lg-6 col-md-12"><img src="images/600x (2).png" alt=""></div>
+          <div class="col-lg-6 col-md-12">
+            <h1>
+              03
+              <span>我們知道的 ‧ 你也應該知道</span>
+            </h1>
+            <h2>
+              希望讓您懂保養、懂挑選、懂我們用心良苦
+            </h2>
+            <ul>
+              <li>來源、成份、劑量、清楚透明</li>
+              <li>專業營養師一對一諮詢</li>
+              <li>超過300篇圖文，與你一起學習成長</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <h4>
+          聯絡我們
+        </h4>
+        <h5>服務時間：週一至週五 09:30-18:00</h5>
+        <h5>客服專線：02-2655-0567</h5>
+        <h5>客服信箱：maoup@maoup.com.tw</h5>
+        <p>Copyright © 2018 莫奧數位股份有限公司</p>
+        <ul class="d-inline-flex">
+          <li><a href="">Line</a></li>|
+          <li><a href="">Facebook</a></li>|
+          <li><a href="">Instagram</a></li>|
+          <li><a href="">YouTube</a></li>
+        </ul>
+      </footer>
+    </div>
+      
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="skrollr-master/dist/skrollr.min.js"></script>
+    <script>
+        var slideIndex=0;
+        var move=0;
+        let slideWidth=1200;
+        let sildeImg=["1200x.webp", "1200x (1).webp"]
+        let slideCount=sildeImg.length;
+        $(".slide-pic").css("width",slideCount*slideWidth)
+        for(i=0; i<sildeImg.length; i++){  
+            let slide=`<li><img src="images/${sildeImg[i]}" alt=""></li>`
+            $("#pages").append("<li></li>")
+            console.log(slide)
+            $("#slidePic").append(slide)
+        }
+        $(".pages li").eq(0).css("background","#fff")
+
+        $(".pages li").hover(function(){
+            slideIndex=$(this).index();
+            goSlide()
+        })
+        $("#goNext").click(function(){
+            ++slideIndex
+            if (slideIndex>=slideCount){
+                slideIndex=0;
+            }
+            goSlide()
+        })
+        $("#goPrev").click(function(){
+            --slideIndex
+            if (slideIndex<0){
+                slideIndex=slideCount-1;
+            }
+            goSlide()
+        })
+        function goSlide(){
+            move=0-1200*slideIndex;
+            $(".slide-pic").css("left",move)
+            $(".pages li").eq(slideIndex).css("background","#fff")
+            .siblings().css("background","transparent")
+            console.log(slideIndex)
+        }
+        
+        let lastScrollTop=0;
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop();
+
+            if(scrollTop>lastScrollTop){
+                $(".fixed").addClass("active")
+            }else{
+                $(".fixed").removeClass("active")
+            }
+            lastScrollTop=scrollTop;
+        })
+
+        let navPosition=$(".header-nav").offset().top;
+        console.log(navPosition)
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop()
+            console.log(scrollTop)
+            if(scrollTop>=navPosition){
+                $(".header-nav").addClass("fix_top");
+            }else{
+                $(".header-nav").removeClass("fix_top");
+            }
+        })
+        var s = skrollr.init();
+    </script>
+    
+  </body>
+</html>

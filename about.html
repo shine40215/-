@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>品牌故事</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.sticky.js"></script> -->
+    <style>
+      *{
+        font-family: 'Noto Sans TC', sans-serif;
+      
+      }
+      .fixed{
+        position: fixed;
+        top: 80px;
+        left: 0px;
+        width: 100%;
+        transition: .5s;
+        background: rgb(228, 228, 228);
+        z-index: 998;
+      }
+      .fixed.active{
+            top:-60px;
+        }
+        .header-nav{
+        z-index: 999;
+        padding: 5px 20px;
+        background: oldlace;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+        position: sticky;
+        /* position: fixed; */
+      }
+      .fiX{
+        position: absolute;
+        top:136px;
+        left: 50%;
+        transform:translateX(-50%);
+        width: 100%;
+      }
+      .header-nav.fix_top{
+        position: fixed;
+        width: 100%;
+        top:0;
+        left:0;
+      }
+  
+      
+      li{
+        list-style: none;
+      }
+      .wrapper{
+        max-width:1200px;
+        margin: 0px auto;
+
+      }
+
+   
+      .menu{
+        padding: 0;
+      }
+      .menu li a{
+        color: rgb(66, 66, 66);
+        text-decoration: none;
+      }
+      .menu li a:hover{
+        color: rgb(136, 66, 19);
+      }
+   
+      .textCenter{
+        text-align: center;
+      }
+      .title-box{
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .title-box ul {
+        margin-bottom: 25px;
+        text-align: left;
+        padding-left: 30%;
+      }
+
+      .title-box ul li{
+        list-style: circle inside;
+        line-height: 1.6;
+        color: #865541;
+      }
+      .story{
+        margin: 50px auto;
+      }
+      .story h4,h1{
+        text-align: center;
+      }
+      .storyImg img{
+        width: 100%;
+        margin: 0 auto;
+      }
+      .title-box h1{
+        color:#865541;
+      }
+      .title-box h4{
+        color:rgb(179, 147, 20);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .title-box p{
+        color:rgb(116, 116, 116);
+      }
+      .padding{
+        padding: 20px 0;
+      }
+    
+ 
+      footer{
+        background: rgb(255, 225, 160);
+        padding: 30px;
+        text-align: center;
+        color: rgb(65, 65, 65) ;
+      }
+      footer p{
+        padding: 10px 0;
+        border-top:1px solid  rgb(94, 94, 94);
+        margin: 20px 0 0 0;
+      }
+      footer li{
+        margin:0 20px;
+      }
+      footer li a{
+        color: rgb(94, 94, 94);
+      }
+      footer li a:hover{
+        text-decoration: none;
+        color: rgb(141, 68, 25);    
+      }
+  
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <ul class="d-flex justify-content-around header-nav">
+          <li class="flex-grow-1">
+            <a href=""><img src="images/1-01.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-06.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-03.png" alt=""></a>
+          </li>
+          <li>
+            <a href=""><img src="images/1-02.png" alt=""></a>          
+          </li>
+        </ul>
+      </nav>
+      <nav class="fixed">
+          <ul class="d-flex justify-content-around wrapper menu">
+            <li class="py-3">
+              <a href="">品牌故事</a>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來洗</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">草本養護系列</a>
+                  <a class="dropdown-item" href="#">口腔對策系列</a>
+                  <a class="dropdown-item" href="#">植淨日常系列</a>
+              </div>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">毛起來吃</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="home.html">毛孩每日健康賞</a>
+                <a class="dropdown-item" href="#">毛點心製所</a>
+                <a class="dropdown-item" href="#">阿姆阿姆潔牙棒</a>
+            </div>
+            </li>
+            <li class="py-3">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">所有商品</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">汪汪商品</a>
+                  <a class="dropdown-item" href="#">喵喵商品</a>
+                  <a class="dropdown-item" href="#">周邊嚴選</a>
+                  <a class="dropdown-item" href="#">優惠套組</a>
+              </div>
+            </li>
+            <li class="py-3"><a href="QA.html">常見Q&A</a></li>
+            <li class="py-3"><a href="">這樣洗最健康</a></li>
+            <li class="py-3"><a href="">小毛會員招募中</a></li>
+          </ul>
+        </nav>
+      <div class="fiX">
+        <header>
+          <div class="container title-box story">
+            <h4 class="col-md-12">
+              從人氣網路寵物社群，到台灣首間寵物洗護專櫃品牌，<br>
+              「毛起來」將對毛孩的寵愛，轉化為開發「好產品」的動力
+            </h4>
+            <h1 class="col-md-12">
+              對毛孩的愛，就像阿嬤對我們的愛一樣，總是想把最好的留給牠
+            </h1>
+            <p class="col-md-12">
+              小時候，阿嬤老是說「囝仔人青菜養青菜大」，但吃飯時夾給我們的，總是最肥美的腿；長大後養了寵物，嘴裡笑罵著牠真是賠錢貨，但真的生病時，卻比誰都還著急。
+              <br>
+              <br>
+              就像家人的相處一樣，有歡笑共度的時光，也難免會鬧脾氣、會吵架，但是要吃什麼、買什麼時，在能力可及的範圍內，總是把最好的留給牠。
+          </p>
+          </div>
+          <div class="storyImg">
+            <img src="images/1200x (3).webp" alt="">
+          </div>
+      </header>
+      <div class="container story">
+        <div class="title-box">
+          <h1 class="col-md-12">
+            天然、安全只是基本要求，要做，就做真正有幫助的好東西
+          </h1>
+          <p class="col-md-12">
+              從第一支商品「癢癢退散洗毛精」開始，每一件產品的開發都是經過「需求訪談試用回饋配方調整消費者使用狀況追蹤」這樣與使用者緊密接觸的成果，在研發的過程中，三個方面的品質要求是我們堅持的評量標準：
+          </p>
+          <ul>
+            <li>從毛孩的需求出發</li>
+            <li>有感改善</li>
+            <li>比「人用」產品更高的標準生產</li>
+          </ul>
+          <p class="col-md-12">
+            天花亂墜的訴求每個人都會說，唯有使用後的感受是禁得起消費者驗證的。「是朋友介紹我來買你們商品的！」簡單的一句話，總是可以讓客服人員開心一整天，毛起來對產品的堅持，回饋在消費者的好口碑中，除了高達98.2%的使用滿意度，更在短短一年半內累積了上千則五星好評。
+
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <img class="col-lg-6" src="images/600x.webp" alt="">
+          <img class="col-lg-6" src="images/600x (1).webp" alt="">
+        </div>
+      </div>
+      <div class="container story">
+          <div class="title-box">
+            <h1 class="col-md-12">
+              「毛起來」的責任與自信，你可以放心用在毛孩身上的寵物品牌
+            </h1>
+            <p class="col-md-12">
+              毛起來粉絲團成立以來，我們的客服每個月回覆超過萬則的私訊與留言，認真看待每個客戶的回饋與建議。2018年3月，毛起來推出「健康相談室」，由營養師在線上提供專業的諮詢，一次次的對談中，也讓我們更深入了解消費者的需求與煩惱。
+              <br><br>
+              毛起來雖然以網路為主要通路，但是希望透過無微不至的服務，讓每個人都能夠沒有疑慮、安心地選購最適合毛孩的商品。
+            </p>
+          </div>
+        </div>
+        <div class="wrapper">
+          <img src="images/1200x (4).webp" alt="">
+        </div>
+        <div class="container story padding">
+            <div class="title-box">
+              <h4 class="col-md-12">
+                  有任何不了解、不放心的地方嗎？<br>
+                  一通電話，一則訊息，我們一定盡速回應<br>
+                  「毛起來」將對毛孩的寵愛，轉化為開發「好產品」的動力
+              </h4>
+            </div>
+          </div>
+      <footer>
+        <h4>
+          聯絡我們
+        </h4>
+        <h5>服務時間：週一至週五 09:30-18:00</h5>
+        <h5>客服專線：02-2655-0567</h5>
+        <h5>客服信箱：maoup@maoup.com.tw</h5>
+        <p>Copyright © 2018 莫奧數位股份有限公司</p>
+        <ul class="d-inline-flex">
+          <li><a href="">Line</a></li>|
+          <li><a href="">Facebook</a></li>|
+          <li><a href="">Instagram</a></li>|
+          <li><a href="">YouTube</a></li>
+        </ul>
+      </footer>
+    </div>
+      
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="dist/skrollr.min.js"></script>
+    <script>
+        var slideIndex=0;
+        var move=0;
+        let slideWidth=1200;
+        let sildeImg=["1200x.webp", "1200x (1).webp"]
+        let slideCount=sildeImg.length;
+        $(".slide-pic").css("width",slideCount*slideWidth)
+        for(i=0; i<sildeImg.length; i++){  
+            let slide=`<li><img src="images/${sildeImg[i]}" alt=""></li>`
+            $("#pages").append("<li></li>")
+            console.log(slide)
+            $("#slidePic").append(slide)
+        }
+        $(".pages li").eq(0).css("background","#fff")
+
+        $(".pages li").hover(function(){
+            slideIndex=$(this).index();
+            goSlide()
+        })
+        $("#goNext").click(function(){
+            ++slideIndex
+            if (slideIndex>=slideCount){
+                slideIndex=0;
+            }
+            goSlide()
+        })
+        $("#goPrev").click(function(){
+            --slideIndex
+            if (slideIndex<0){
+                slideIndex=slideCount-1;
+            }
+            goSlide()
+        })
+        function goSlide(){
+            move=0-1200*slideIndex;
+            $(".slide-pic").css("left",move)
+            $(".pages li").eq(slideIndex).css("background","#fff")
+            .siblings().css("background","transparent")
+            console.log(slideIndex)
+        }
+        
+        let lastScrollTop=0;
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop();
+
+            if(scrollTop>lastScrollTop){
+                $(".fixed").addClass("active")
+            }else{
+                $(".fixed").removeClass("active")
+            }
+            lastScrollTop=scrollTop;
+        })
+
+        let navPosition=$(".header-nav").offset().top;
+        console.log(navPosition)
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop()
+            console.log(scrollTop)
+            if(scrollTop>=navPosition){
+                $(".header-nav").addClass("fix_top");
+            }else{
+                $(".header-nav").removeClass("fix_top");
+            }
+        })
+        var s = skrollr.init();
+    </script>
+  </body>
+</html>
